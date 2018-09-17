@@ -1,5 +1,5 @@
 module.exports = {
-    "database" : "mongodb://localhost:27017/easyfind",
+    "database" : "mongodb://rasarahasa:rasarahasa1234@ds259802.mlab.com:59802/rasarahasa",
 
     "cloud_name":"defah2zln",
     "api_key":"227588295695171",
@@ -7,3 +7,6 @@ module.exports = {
     "sendgrid_apikey":"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"
 
 };
+
+//
+//mongodb://localhost:27017/easyfind
