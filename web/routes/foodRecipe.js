@@ -17,10 +17,7 @@ const upload = multer({ storage: storage })
 
 const router = express.Router();
 
-
-router.get('/',(req,res)=>{
-    res.send("Hello foodrecipe!");
-  });
+/*
 
  
   router.get('/a',(req,res)=>{
@@ -41,7 +38,7 @@ router.get('/',(req,res)=>{
     console.log(req.body.fullname);
     });
   });
-
+*/
   router.post('/addrecipe',upload.single('foodimg'),token.verifyfiletoken,(req,res)=>{
    // console.log(req.body.recipename);
     //console.log(req.user.username);

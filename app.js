@@ -49,9 +49,11 @@ cloudinary.config({
 
 
 /*url routings*/
+/*
 app.get('/',(req,res)=>{
   res.send("Hello food!!");
 });
+*/
 
 app.use('/user',user);
 app.use('/foodrecipe',foodRecipe);

@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
   }
 });
 const upload = multer({ storage: storage })
-
+/*
 
 router.get('/',(req,res)=>{
   
@@ -30,7 +30,7 @@ router.get('/',(req,res)=>{
  
 });
 
-
+*/
 
 
 router.post('/register',upload.single('profpic'),(req,res)=>{
