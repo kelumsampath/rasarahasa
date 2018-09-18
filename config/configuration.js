@@ -1,5 +1,5 @@
 module.exports = {
-    "database" : "mongodb://localhost:27017/easyfind",
+    "database" : "mongodb://localhost:31270/easyfind",
 
     "cloud_name":"defah2zln",
     "api_key":"227588295695171",
