@@ -1717,7 +1717,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.getAllacceptedRecipe = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/getallacceptedrecipe", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getallacceptedrecipe", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getAllRecipe = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
