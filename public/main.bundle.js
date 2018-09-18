@@ -1644,13 +1644,13 @@ var AuthService = /** @class */ (function () {
         formData.append('lastname', user.lastname);
         formData.append('email', user.email);
         formData.append('phoneno', user.phoneno);
-        return this.http.post("http://localhost:9000/user/register", formData).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/register", formData).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.loginUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/user/login", user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/login", user, { headers: headers }).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.storeData = function (token, userdata) {
@@ -1665,7 +1665,7 @@ var AuthService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.get("http://localhost:9000/user/profile", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile", { headers: headers }).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.fetchtoken = function () {
@@ -1681,7 +1681,7 @@ var AuthService = /** @class */ (function () {
         this.authtoken = null;
         this.user = null;
         localStorage.clear();
-        return this.http.get("http://localhost:9000/user/logout", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])('tokenid');
@@ -1690,7 +1690,7 @@ var AuthService = /** @class */ (function () {
         var formData = new FormData();
         formData.append('profpic', user.fileToUpload, user.fileToUpload.name);
         formData.append('fullname', user.fullname);
-        return this.http.post("http://localhost:9000/foodrecipe/c", formData).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/c", formData).map(function (res) { return res.json(); });
     };
     AuthService.prototype.addrecipe = function (newrecipe) {
         //this.fetchtoken();
@@ -1711,28 +1711,28 @@ var AuthService = /** @class */ (function () {
         formData.append('rate', newrecipe.rate);
         formData.append('catagory', newrecipe.catagory);
         formData.append('description', newrecipe.description);
-        return this.http.post("http://localhost:9000/foodrecipe/addrecipe", formData).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/addrecipe", formData).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.getAllacceptedRecipe = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/getallacceptedrecipe", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/getallacceptedrecipe", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getAllRecipe = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/getallrecipe", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getallrecipe", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getMostliked = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/getmostliked", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getmostliked", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getviewRecipe = function (recipename) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/getviewrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getviewrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.likeRecipe = function (recipename) {
         var recipeData = {
@@ -1743,7 +1743,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/likerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/likerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.unlikeRecipe = function (recipename) {
         var recipeData = {
@@ -1754,7 +1754,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.checklike = function (recipename) {
         var recipeData = {
@@ -1765,28 +1765,28 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/checklike", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/checklike", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getuserrecipes = function (myusername) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.fetchtoken();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/getuserrecipies", myusername, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getuserrecipies", myusername, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.editUser = function (editData) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.fetchtoken();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/user/updateprofile", editData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/updateprofile", editData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.editimage = function (image) {
         var token = localStorage.getItem("tokenid");
         var formData = new FormData();
         formData.append('Authorization', token);
         formData.append('editprofpic', image.editimage, image.editimage.name);
-        return this.http.post("http://localhost:9000/user/profpicchange", formData).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profpicchange", formData).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.deleterecipe = function (recipename) {
@@ -1798,7 +1798,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/deleterecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/deleterecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.changepassword = function (password) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -1806,14 +1806,14 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/user/changepassword", password, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/changepassword", password, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.Isadmin = function () {
         this.fetchtoken();
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/user/isadmin", { sdsd: "sdd" }, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/isadmin", { sdsd: "sdd" }, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.acceptRecipe = function (recipeData) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -1821,12 +1821,12 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/acceptrecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/acceptrecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.searchrecipe = function (recipename) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/foodrecipe/searchrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/searchrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.deleteacc = function (pass) {
         var password = {
@@ -1836,12 +1836,12 @@ var AuthService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/user/deleteuser", password, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/deleteuser", password, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.fogotpassword = function (username) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://localhost:9000/user/fogotpassword", username, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/fogotpassword", username, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
