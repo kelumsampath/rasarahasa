@@ -1,10 +1,10 @@
 var helper = require('sendgrid').mail;
-var fromEmail = new helper.Email('test@example.com');
+var fromEmail = new helper.Email('rasarahasa@gmail.com');
 
 module.exports.unamepasssend=function(userdata,callback){
         var toEmail = new helper.Email(userdata.email);
         var subject = 'FOOD MASTER';
-        var content = new helper.Content('text/plain', 'This is system genarated password for youe username: Usename: '+userdata.username+" password: "+userdata.password);
+        var content = new helper.Content('text/plain', 'This is system genarated username and password for you. username: Usename: '+userdata.username+" password: "+userdata.password);
         var mail = new helper.Mail(fromEmail, subject, toEmail, content);
         var sg = require('sendgrid')("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");
         var request = sg.emptyRequest({
@@ -39,7 +39,7 @@ module.exports.unamepasssend=function(userdata,callback){
   module.exports.tempunamepasssend=function(userdata,callback){
     var toEmail = new helper.Email(userdata.email);
     var subject = 'FOOD MASTER';
-    var content = new helper.Content('text/plain', 'This is system genarated tempory password for youe username: Usename: '+userdata.username+" password: "+userdata.password);
+    var content = new helper.Content('text/plain', 'This is system genarated tempory password for you. username: Usename: '+userdata.username+" password: "+userdata.password);
     var mail = new helper.Mail(fromEmail, subject, toEmail, content);
     var sg = require('sendgrid')("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");
     var request = sg.emptyRequest({
