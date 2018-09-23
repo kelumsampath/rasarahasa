@@ -1664,7 +1664,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.checklike = function (recipename) {
         var recipeData = {
