@@ -17,6 +17,11 @@ const upload = multer({ storage: storage })
 
 const router = express.Router();
 
+router.get('/b',(req,res)=>{
+  
+  res.send("Wrong url");
+
+});
 /*
 
  
