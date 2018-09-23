@@ -141,7 +141,7 @@ router.post('/login',(req,res)=>{
 });
 
 
-router.get('/profile',token.verifytoken,(req,res)=>{
+router.post('/profile',token.verifytoken,(req,res)=>{
  // var userdata = req.user;
   //console.log(userdata.username);
   datamodelds.getUserDetails(req.user.username,function(err,user){
@@ -177,7 +177,7 @@ router.get('/about',token.verifytoken,(req,res)=>{
   res.send("I'm "+userdata.fullname+". my user name is "+userdata.username);
 });*/
 
-router.get('/logout',token.verifytoken,(req,res)=>{
+router.post('/logout',token.verifytoken,(req,res)=>{
     const token = req.token;
     //console.log(token);
     tokenmodels.revokeToken(token,(err,removed)=>{
