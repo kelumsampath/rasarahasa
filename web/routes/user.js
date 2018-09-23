@@ -171,11 +171,11 @@ router.post('/profile',token.verifytoken,(req,res)=>{
   });
 
 });
-/*
+
 router.get('/about',token.verifytoken,(req,res)=>{
   var userdata = req.user;
   res.send("I'm "+userdata.fullname+". my user name is "+userdata.username);
-});*/
+});
 
 router.post('/logout',token.verifytoken,(req,res)=>{
     const token = req.token;
