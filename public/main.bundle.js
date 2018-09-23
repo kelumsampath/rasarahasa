@@ -1569,7 +1569,7 @@ var AuthService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile", { headers: headers }).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.fetchtoken = function () {
@@ -1585,7 +1585,7 @@ var AuthService = /** @class */ (function () {
         this.authtoken = null;
         this.user = null;
         localStorage.clear();
-        return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])('tokenid');
