@@ -573,7 +573,7 @@ module.exports = "\r\ntable{\r\n    width: 90%;\r\n    margin-left: 5%;\r\n\r\n}
 /***/ "./src/app/components/foodrecipes/recieview/recieview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"container\">\r\n  <div>\r\n    <br>\r\n    <h1 class=\"alert-heading \">{{myrecipe.recipename}}</h1>\r\n      <img src={{myrecipe.imageUrl}} alt=\"\" class=\"rounded\"/>\r\n      <hr>\r\n      <table >\r\n        <tr>\r\n          <td>Catogory: {{myrecipe.catagory}}</td>\r\n          <td>Rate: {{myrecipe.rate}}</td>\r\n          <td>Likes: {{likes}}</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Prep-Time: {{myrecipe.preptime}} min.</td>\r\n          <td>Cook-Time: {{myrecipe.cooktime}} min.</td>\r\n          <td>Ready-Time: {{myrecipe.readytime}} min.</td>\r\n        </tr>\r\n        <tr>\r\n          <td></td>\r\n          <td>Serves: {{myrecipe.serves}}</td>\r\n          <td></td>\r\n        </tr>\r\n      </table>\r\n      <hr>\r\n      <div >\r\n          <h3>Description:</h3>\r\n          <p>{{myrecipe.description}}</p> \r\n        </div>\r\n        <hr>\r\n      <div>\r\n        <h3>Ingregients:</h3>\r\n        <p>{{myrecipe.ingredients}}</p> \r\n      </div>\r\n      <hr>\r\n      <div>\r\n          <h3>Directions:</h3>\r\n          <p>{{myrecipe.directions}}</p> \r\n        </div>\r\n      \r\n      <div  *ngIf=\"myrecipe.notes!=''\">\r\n          <hr>\r\n          <h3>Special Notes:</h3>\r\n          <p>{{myrecipe.notes}}</p> \r\n          \r\n        </div>\r\n        <hr>\r\n          <button [routerLink]=\"['../']\" class=\"btn btn-info btn-lg back\">\r\n              <span class=\"glyphicon glyphicon-chevron-left\"></span> Back\r\n          </button>\r\n          <iframe src=\"https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.rasarahasa.com&layout=box_count&size=large&mobile_iframe=true&width=73&height=58&appId\" width=\"73\" height=\"58\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allow=\"encrypted-media\"></iframe>\r\n          <button class=\"btn btn-info btn-lg liked\" (click)=\"unlike()\" *ngIf=\"Islike\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Liked\r\n          </button>\r\n          <button class=\"btn btn-info btn-lg noliked\" (click)=\"like()\" *ngIf=\"Islike==false\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Like \r\n          </button>\r\n\r\n            <div  *ngIf=\"isrealuser==true\">\r\n              <br>\r\n              <button (click)=\"deleterecipe()\">Delete this Recipe</button>\r\n            </div>\r\n            <div *ngIf=\"admin==true\">\r\n                <hr>\r\n                <h3>Status: {{this.status}}</h3>\r\n                <button class=\"btn btn-success btn-lg \" (click)=\"accept()\" *ngIf=\"this.status!='accepted'\">Accept</button>\r\n                <button class=\"btn btn-info btn-lg \" (click)=\"pending()\" *ngIf=\"this.status!='pending'\">Pending</button>\r\n                <button class=\"btn btn-danger btn-lg \" (click)=\"reject()\" *ngIf=\"this.status!='rejected'\">Reject</button>\r\n              </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "\r\n\r\n<div class=\"container\">\r\n  <div>\r\n    <br>\r\n    <h1 class=\"alert-heading \">{{myrecipe.recipename}}</h1>\r\n      <img src={{myrecipe.imageUrl}} alt=\"\" class=\"rounded\"/>\r\n      <hr>\r\n      <table >\r\n        <tr>\r\n          <td>Catogory: {{myrecipe.catagory}}</td>\r\n          <td>Rate: {{myrecipe.rate}}</td>\r\n          <td>Likes: {{likes}}</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Prep-Time: {{myrecipe.preptime}} min.</td>\r\n          <td>Cook-Time: {{myrecipe.cooktime}} min.</td>\r\n          <td>Ready-Time: {{myrecipe.readytime}} min.</td>\r\n        </tr>\r\n        <tr>\r\n          <td></td>\r\n          <td>Serves: {{myrecipe.serves}}</td>\r\n          <td></td>\r\n        </tr>\r\n      </table>\r\n      <hr>\r\n      <div >\r\n          <h3>Description:</h3>\r\n          <p>{{myrecipe.description}}</p> \r\n        </div>\r\n        <hr>\r\n      <div>\r\n        <h3>Ingregients:</h3>\r\n        <p>{{myrecipe.ingredients}}</p> \r\n      </div>\r\n      <hr>\r\n      <div>\r\n          <h3>Directions:</h3>\r\n          <p>{{myrecipe.directions}}</p> \r\n        </div>\r\n      \r\n      <div  *ngIf=\"myrecipe.notes!=''\">\r\n          <hr>\r\n          <h3>Special Notes:</h3>\r\n          <p>{{myrecipe.notes}}</p> \r\n          \r\n        </div>\r\n        <hr>\r\n          <button [routerLink]=\"['../']\" class=\"btn btn-info btn-lg back\">\r\n              <span class=\"glyphicon glyphicon-chevron-left\"></span> Back\r\n          </button>\r\n          <iframe src=\"https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.rasarahasa.com%2Fallrecipe%2F&layout=button_count&size=large&mobile_iframe=true&width=84&height=28&appId\" width=\"84\" height=\"28\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allow=\"encrypted-media\"></iframe>\r\n          <button class=\"btn btn-info btn-lg liked\" (click)=\"unlike()\" *ngIf=\"Islike\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Liked\r\n          </button>\r\n          <button class=\"btn btn-info btn-lg noliked\" (click)=\"like()\" *ngIf=\"Islike==false\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Like \r\n          </button>\r\n\r\n            <div  *ngIf=\"isrealuser==true\">\r\n              <br>\r\n              <button (click)=\"deleterecipe()\">Delete this Recipe</button>\r\n            </div>\r\n            <div *ngIf=\"admin==true\">\r\n                <hr>\r\n                <h3>Status: {{this.status}}</h3>\r\n                <button class=\"btn btn-success btn-lg \" (click)=\"accept()\" *ngIf=\"this.status!='accepted'\">Accept</button>\r\n                <button class=\"btn btn-info btn-lg \" (click)=\"pending()\" *ngIf=\"this.status!='pending'\">Pending</button>\r\n                <button class=\"btn btn-danger btn-lg \" (click)=\"reject()\" *ngIf=\"this.status!='rejected'\">Reject</button>\r\n              </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1565,11 +1565,14 @@ var AuthService = /** @class */ (function () {
     };
     ;
     AuthService.prototype.getprofile = function () {
+        var user = {
+            "user": "user"
+        };
         this.fetchtoken();
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile", user, { headers: headers }).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.fetchtoken = function () {
@@ -1578,6 +1581,9 @@ var AuthService = /** @class */ (function () {
     };
     ;
     AuthService.prototype.logOut = function () {
+        var user = {
+            "user": "user"
+        };
         this.fetchtoken();
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
@@ -1585,7 +1591,7 @@ var AuthService = /** @class */ (function () {
         this.authtoken = null;
         this.user = null;
         localStorage.clear();
-        return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout", user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])('tokenid');
@@ -1658,7 +1664,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.checklike = function (recipename) {
         var recipeData = {
