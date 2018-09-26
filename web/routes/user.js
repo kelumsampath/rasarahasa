@@ -63,7 +63,7 @@ router.post('/register',upload.single('profpic'),(req,res)=>{
                   cloudinary.uploader.destroy(result.public_id, function(result) {
                     if (err.name === 'MongoError' && err.code === 11000) {
                       // console.log('There was a duplicate key error');
-                      res.json({state:false,msg:"Your username already used!"}) 
+                      res.json({state:false,msg:"Your email already used!"}) 
                     }else{
                       res.json({state:false,msg:"Something Went wrong!"})
                     }
