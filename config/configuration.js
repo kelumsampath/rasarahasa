@@ -4,7 +4,7 @@ module.exports = {
     "cloud_name":"defah2zln",
     "api_key":"227588295695171",
     "api_secrete":"H3qw5KLfuUeLAi6dYvhqXFKu3I8",
-    "sendgrid_apikey":"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"
+    "sendgrid_apikey":"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"
 
 };
 
