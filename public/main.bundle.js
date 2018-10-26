@@ -330,6 +330,7 @@ var AddrecipeComponent = /** @class */ (function () {
         this._location = _location;
         this.imageUrl = "../../../assets/images/defualt.jpg";
         this.fileToUpload = null;
+        this.fileToUpload = new File([""], "defualt.jpg");
     }
     AddrecipeComponent.prototype.ngOnInit = function () {
     };

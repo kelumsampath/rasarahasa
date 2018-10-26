@@ -47,8 +47,14 @@ router.get('/b',(req,res)=>{
   router.post('/addrecipe',upload.single('foodimg'),token.verifyfiletoken,(req,res)=>{
    // console.log(req.body.recipename);
     //console.log(req.user.username);
+    filepath = "";
+  if(req.file.originalname == 'defualt.jpg')
+    filepath = 'uploads/defualt.jpg';
+  else
+    filepath = req.file.path;
+    
     let now = new Date();
-    cloudinary.uploader.upload(req.file.path,function(result) { 
+    cloudinary.uploader.upload(filepath,function(result) { 
       const img =cloudinary.image(result.public_id, { alt: "Sample Image" });
       const link = img.split("'");
     const regRecipe = new recipemodels({
