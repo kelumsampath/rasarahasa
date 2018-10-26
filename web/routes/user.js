@@ -34,8 +34,14 @@ router.get('/',(req,res)=>{
 
 
 router.post('/register',upload.single('profpic'),(req,res)=>{
-  //console.log(req.body);
-  cloudinary.uploader.upload(req.file.path,function(result) { 
+  //console.log("img: "+req.file.originalname);
+  filepath = "";
+  if(req.file.originalname == 'defualt.jpg')
+    filepath = 'uploads/defualt.jpg';
+  else
+    filepath = req.file.path;
+  //console.log(filepath);
+  cloudinary.uploader.upload(filepath,function(result) { 
     //console.log(result);
     var pass;
     password.genaratepass((password)=>{

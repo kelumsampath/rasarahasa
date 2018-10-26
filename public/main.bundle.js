@@ -573,7 +573,7 @@ module.exports = "\r\ntable{\r\n    width: 90%;\r\n    margin-left: 5%;\r\n\r\n}
 /***/ "./src/app/components/foodrecipes/recieview/recieview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"container\">\r\n  <div>\r\n    <br>\r\n    <h1 class=\"alert-heading \">{{myrecipe.recipename}}</h1>\r\n      <img src={{myrecipe.imageUrl}} alt=\"\" class=\"rounded\"/>\r\n      <hr>\r\n      <table >\r\n        <tr>\r\n          <td>Catogory: {{myrecipe.catagory}}</td>\r\n          <td>Rate: {{myrecipe.rate}}</td>\r\n          <td>Likes: {{likes}}</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Prep-Time: {{myrecipe.preptime}} min.</td>\r\n          <td>Cook-Time: {{myrecipe.cooktime}} min.</td>\r\n          <td>Ready-Time: {{myrecipe.readytime}} min.</td>\r\n        </tr>\r\n        <tr>\r\n          <td></td>\r\n          <td>Serves: {{myrecipe.serves}}</td>\r\n          <td></td>\r\n        </tr>\r\n      </table>\r\n      <hr>\r\n      <div >\r\n          <h3>Description:</h3>\r\n          <p>{{myrecipe.description}}</p> \r\n        </div>\r\n        <hr>\r\n      <div>\r\n        <h3>Ingregients:</h3>\r\n        <p>{{myrecipe.ingredients}}</p> \r\n      </div>\r\n      <hr>\r\n      <div>\r\n          <h3>Directions:</h3>\r\n          <p>{{myrecipe.directions}}</p> \r\n        </div>\r\n      \r\n      <div  *ngIf=\"myrecipe.notes!=''\">\r\n          <hr>\r\n          <h3>Special Notes:</h3>\r\n          <p>{{myrecipe.notes}}</p> \r\n          \r\n        </div>\r\n        <hr>\r\n          <button [routerLink]=\"['../']\" class=\"btn btn-info btn-lg back\">\r\n              <span class=\"glyphicon glyphicon-chevron-left\"></span> Back\r\n          </button>\r\n          \r\n          \r\n\r\n            <iframe id=\"myshare\" src=\"\" width=\"83\" height=\"28\" style=\"border:none;overflow:hidden\" scrolling=\"no\"  frameborder=\"0\" allowTransparency=\"true\"></iframe>\r\n          \r\n          <button class=\"btn btn-info btn-lg liked\" (click)=\"unlike()\" *ngIf=\"Islike\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Liked\r\n          </button>\r\n          <button class=\"btn btn-info btn-lg noliked\" (click)=\"like()\" *ngIf=\"Islike==false\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Like \r\n          </button>\r\n\r\n            <div  *ngIf=\"isrealuser==true\">\r\n              <br>\r\n              <button (click)=\"deleterecipe()\">Delete this Recipe</button>\r\n            </div>\r\n            <div *ngIf=\"admin==true\">\r\n                <hr>\r\n                <h3>Status: {{this.status}}</h3>\r\n                <button class=\"btn btn-success btn-lg \" (click)=\"accept()\" *ngIf=\"this.status!='accepted'\">Accept</button>\r\n                <button class=\"btn btn-info btn-lg \" (click)=\"pending()\" *ngIf=\"this.status!='pending'\">Pending</button>\r\n                <button class=\"btn btn-danger btn-lg \" (click)=\"reject()\" *ngIf=\"this.status!='rejected'\">Reject</button>\r\n              </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "\r\n\r\n<div class=\"container\">\r\n  <div>\r\n    <br>\r\n    <h1 class=\"alert-heading \">{{myrecipe.recipename}}</h1>\r\n      <img src={{myrecipe.imageUrl}} alt=\"\" class=\"rounded\"/>\r\n      <hr>\r\n      <table >\r\n        <tr>\r\n          <td>Catogory: {{myrecipe.catagory}}</td>\r\n          <td>Rate: {{myrecipe.rate}}</td>\r\n          <td>Likes: {{likes}}</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Prep-Time: {{myrecipe.preptime}} min.</td>\r\n          <td>Cook-Time: {{myrecipe.cooktime}} min.</td>\r\n          <td>Ready-Time: {{myrecipe.readytime}} min.</td>\r\n        </tr>\r\n        <tr>\r\n          <td></td>\r\n          <td>Serves: {{myrecipe.serves}}</td>\r\n          <td></td>\r\n        </tr>\r\n      </table>\r\n      <hr>\r\n      <div >\r\n          <h3>Description:</h3>\r\n          <p>{{myrecipe.description}}</p> \r\n        </div>\r\n        <hr>\r\n      <div>\r\n        <h3>Ingregients:</h3>\r\n        <p>{{myrecipe.ingredients}}</p> \r\n      </div>\r\n      <hr>\r\n      <div>\r\n          <h3>Directions:</h3>\r\n          <p>{{myrecipe.directions}}</p> \r\n        </div>\r\n      \r\n      <div  *ngIf=\"myrecipe.notes!=''\">\r\n          <hr>\r\n          <h3>Special Notes:</h3>\r\n          <p>{{myrecipe.notes}}</p> \r\n          \r\n        </div>\r\n        <hr>\r\n          <button [routerLink]=\"['../']\" class=\"btn btn-info btn-lg back\">\r\n              <span class=\"glyphicon glyphicon-chevron-left\"></span> Back\r\n          </button>\r\n          \r\n          \r\n\r\n            <iframe id=\"myshare\" [src]='shareurl()' width=\"83\" height=\"28\" style=\"border:none;overflow:hidden\" scrolling=\"no\"  frameborder=\"0\" allowTransparency=\"true\"></iframe>\r\n          \r\n          <button class=\"btn btn-info btn-lg liked\" (click)=\"unlike()\" *ngIf=\"Islike\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Liked\r\n          </button>\r\n          <button class=\"btn btn-info btn-lg noliked\" (click)=\"like()\" *ngIf=\"Islike==false\">\r\n              <span class=\"glyphicon glyphicon-thumbs-up\"></span> Like \r\n          </button>\r\n\r\n            <div  *ngIf=\"isrealuser==true\">\r\n              <br>\r\n              <button (click)=\"deleterecipe()\">Delete this Recipe</button>\r\n            </div>\r\n            <div *ngIf=\"admin==true\">\r\n                <hr>\r\n                <h3>Status: {{this.status}}</h3>\r\n                <button class=\"btn btn-success btn-lg \" (click)=\"accept()\" *ngIf=\"this.status!='accepted'\">Accept</button>\r\n                <button class=\"btn btn-info btn-lg \" (click)=\"pending()\" *ngIf=\"this.status!='pending'\">Pending</button>\r\n                <button class=\"btn btn-danger btn-lg \" (click)=\"reject()\" *ngIf=\"this.status!='rejected'\">Reject</button>\r\n              </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -588,6 +588,7 @@ module.exports = "\r\n\r\n<div class=\"container\">\r\n  <div>\r\n    <br>\r\n  
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_flash_messages__ = __webpack_require__("./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_auth_guard__ = __webpack_require__("./src/app/service/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -602,14 +603,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var RecieviewComponent = /** @class */ (function () {
-    function RecieviewComponent(activatedRoute, authservice, ngFlashMessageService, router, authguard) {
+    function RecieviewComponent(activatedRoute, authservice, ngFlashMessageService, router, authguard, sanitizer, title, meta) {
         var _this = this;
         this.activatedRoute = activatedRoute;
         this.authservice = authservice;
         this.ngFlashMessageService = ngFlashMessageService;
         this.router = router;
         this.authguard = authguard;
+        this.sanitizer = sanitizer;
+        this.title = title;
+        this.meta = meta;
         this.admin = false;
         this.myrecipe = {
             recipename: this.activatedRoute.snapshot.paramMap.get('recipename')
@@ -635,6 +640,11 @@ var RecieviewComponent = /** @class */ (function () {
                     "imageUrl": _this.recipe.imageUrl,
                     "likes": _this.likes,
                 };
+                //this.title.setTitle(this.recipe.recipename);
+                _this.meta.updateTag({ name: 'og:title', content: _this.recipe.recipename });
+                _this.meta.updateTag({ name: 'description', content: _this.recipe.description });
+                _this.meta.updateTag({ name: 'og:site_name', content: 'http://www.rasarahasa.com' });
+                _this.meta.updateTag({ property: 'og:image', content: _this.recipe.imageUrl });
                 _this.status = res.recipe.status;
                 //console.log(myrecipe);
                 /// console.log(this.recipe.recipename);
@@ -675,6 +685,10 @@ var RecieviewComponent = /** @class */ (function () {
                 }
             });
         }
+    };
+    RecieviewComponent.prototype.shareurl = function () {
+        var fbsrc = 'https://www.facebook.com/plugins/share_button.php?href=http://www.rasarahasa.com/' + this.router.url + '&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId';
+        return this.sanitizer.bypassSecurityTrustResourceUrl(fbsrc);
     };
     RecieviewComponent.prototype.like = function () {
         var _this = this;
@@ -794,7 +808,10 @@ var RecieviewComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_2__service_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_3_ng_flash_messages__["NgFlashMessageService"],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_4__service_auth_guard__["a" /* AuthGuard */]])
+            __WEBPACK_IMPORTED_MODULE_4__service_auth_guard__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["DomSanitizer"],
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["Title"],
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["Meta"]])
     ], RecieviewComponent);
     return RecieviewComponent;
 }());
@@ -1411,6 +1428,9 @@ var RegisterComponent = /** @class */ (function () {
         this.router = router;
         this.imageUrl = "../../../assets/images/defualt.jpg";
         this.fileToUpload = null;
+        this.fileToUpload = new File([""], "defualt.jpg");
+        //this.fileToUpload = new File([''], "../../../assets/images/defualt.jpg");
+        //console.log(this.fileToUpload);
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
