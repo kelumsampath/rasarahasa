@@ -640,10 +640,10 @@ var RecieviewComponent = /** @class */ (function () {
                     "imageUrl": _this.recipe.imageUrl,
                     "likes": _this.likes,
                 };
-                _this.title.setTitle(_this.recipe.recipename);
-                //this.meta.updateTag({ name: 'og:title', content: this.recipe.recipename })
+                //this.title.setTitle(this.recipe.recipename);
+                _this.meta.updateTag({ name: 'og:title', content: _this.recipe.recipename });
                 _this.meta.updateTag({ name: 'description', content: _this.recipe.description });
-                _this.meta.updateTag({ name: 'og:site_name', content: 'http://www.rasarahasa.com' });
+                //this.meta.updateTag({ name: 'og:site_name', content: 'http://www.rasarahasa.com' })
                 _this.meta.updateTag({ property: 'og:image', content: _this.recipe.imageUrl });
                 _this.status = res.recipe.status;
                 //console.log(myrecipe);
