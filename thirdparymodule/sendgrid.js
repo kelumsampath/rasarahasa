@@ -14,7 +14,8 @@ module.exports.unamepasssend=function(userdata,callback){
         });
         sg.API(request, function (error, response) {
         if (error) {
-            callback(err);
+            //callback(err);
+            console.log("email not sent")
         }else{
             callback(null,response);
         }
