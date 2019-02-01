@@ -143,6 +143,22 @@ router.get('/b',(req,res)=>{
     
   });
 
+  router.post('/getweeklymostliked',(req,res)=>{
+   //console.log("s")
+    recipemodels.getweeklymostliked("csc",(err,recipe)=>{
+      if(err) {
+        //throw err;
+        //console.log("Allrecipe data retrive error");
+        res.json({state:false});
+       
+      }
+      else{
+    
+        res.json({state:true,recipe:recipe});
+      }
+    })
+    
+  });
 
   
   router.post('/getviewrecipe',(req,res)=>{
