@@ -20,8 +20,8 @@ const recepeSchema = new schema({
     imageUrl:{type:String,required:false},
     likes:{type:Number,required:false,default:0},
     date:{type: Date},
-    status:{type:String,required:false,default:"pending"},
-    admincomment:{type:String,required:false,default:"pending for administrator review!"},
+    status:{type:String,required:false,default:"accepted"},
+    admincomment:{type:String,required:false,default:"posted before admin review!"},
 });
 
 const recipemodels=module.exports = mongoose.model("recipemodels",recepeSchema);
