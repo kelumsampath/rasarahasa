@@ -401,7 +401,7 @@ module.exports = "\r\n.add{\r\n    width: 100%;\r\n   \r\n    box-align:\"left\"
 /***/ "./src/app/components/foodrecipes/allrecipe/allrecipe.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n\r\n\r\n<table class=\"table table-striped\" style=\"text-align:center;background-color: black;\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col-dm-8\">\r\n            <div class=\"dropdown\">\r\n                <button class=\"dropbtn\">SELECT CATEGORY</button>\r\n                <div class=\"dropdown-content\">\r\n                    <button (click)=\"all()\" class=\"btn btn-lg bar\">ALL</button><br>\r\n                    <button (click)=\"riceNcurry()\" class=\"btn btn-lg bar\">RICE & CURRY</button><br>\r\n                    <button (click)=\"cakes()\" class=\"btn btn-lg bar\">CAKE</button><br>\r\n                    <button (click)=\"shortmeals()\" class=\"btn btn-lg bar\">SHORT MEALS</button><br>\r\n                    <button (click)=\"other()\" class=\"btn btn-lg bar\">OTHER</button><br>\r\n                </div>\r\n              </div>\r\n        </th>\r\n        <th scope=\"col-dm-8\">\r\n            <div class=\"dropdown\">\r\n          <button [routerLink]=\"['/addrecipe']\" class=\"dropbtn\">ADD NEW RECIPE</button>\r\n              </div>\r\n        </th>\r\n      </tr>\r\n    </thead>\r\n  </table>\r\n      \r\n  \r\n    \r\n\r\n      <div class=\"container\">\r\n          <div class=\"row\">\r\n              \r\n            <div class=\"col-xs-7 col-sm-6 col-lg-8\" >\r\n                <ul *ngFor=\"let recipies of recipe;let i = index\" [attr.data-index]=\"i\">\r\n                    <li *ngIf=\"catogary.mycatogory==recipies.catagory \">\r\n                      <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\"add\">\r\n                        <div id=\"container\"style=\"height:5%\">\r\n                            <div class=\"row\" style=\"height:5%\">\r\n                              <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2% \">\r\n                              <img src=\"{{ recipies.imageUrl }}\" id=\"pic\" class=\"img-rounded\" alt=\"\" style=\"width:100%;\">\r\n                              </div>\r\n                              <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;\">\r\n                              <h1  style=\"font-size:210%;\"> {{ recipies.recipename }}</h1><br>\r\n                              <h2 style=\"font-size:110%;\">{{ recipies.description  }}</h2>\r\n                              </div>\r\n                            </div>\r\n                         </div>\r\n                      </button>\r\n                    </li>\r\n                    <li *ngIf=\"catogary.mycatogory=='all'\">\r\n                     <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\" add\">\r\n                      <div id=\"container\"style=\"height:5%\">\r\n                          <div class=\"row\" style=\"height:5%\">\r\n                            <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2% \">\r\n                            <img src=\"{{ recipies.imageUrl }}\" id=\"pic\" class=\"img-rounded\" alt=\"\" style=\"width:100%;\">\r\n                            </div>\r\n                            <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;\">\r\n                            <h1  style=\"font-size:210%;\"> {{ recipies.recipename }}</h1><br>\r\n                            <h2 style=\"font-size:110%;\">{{ recipies.description  }}</h2>\r\n                            </div>\r\n                          </div>\r\n                       </div>\r\n                     </button>\r\n                   </li>\r\n                   </ul>\r\n                 </div>\r\n\r\n                 <div class=\"col-xs-5 col-sm-6 col-lg-4\"  >\r\n                    <div id=\"\">\r\n                        <div class=\"sidecontent\">\r\n                            <h2 class='headline'>Most Popular Recipes</h2>\r\n                            <ul *ngFor=\"let recipies of sidebarrecipe;let i = index\" [attr.data-index]=\"i\">\r\n                            <li >\r\n                                <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\"sideadd\">\r\n                                  <div id=\"container\"style=\"height:5%\">\r\n                                    <div class=\"row\" style=\"height:5%\">\r\n                                      <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2%;\">\r\n                                      <img src=\"{{ recipies.imageUrl }}\" id=\"sidepic\" class=\"img-rounded\" alt=\"\" style=\"width:100%;margin-top: -30%;margin-left:5%;\">\r\n                                      </div>\r\n                                      <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;margin-top: -5%;\">\r\n                                      <h1  style=\"font-size:120%;\"> {{ recipies.recipename }}</h1><br>\r\n                                      <h2 style=\"font-size:100%;margin-top:-10%;\">LIKES : {{ recipies.likes  }}</h2>\r\n                                      </div>\r\n                                    </div>\r\n                                 </div>\r\n                                </button>\r\n                              </li>\r\n                            </ul>\r\n                        </div>\r\n                </div>\r\n              </div>\r\n               \r\n                 \r\n            </div>\r\n           \r\n        </div>"
+module.exports = "\r\n\r\n\r\n\r\n<table class=\"table table-striped\" style=\"text-align:center;background-color: black;\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col-dm-8\">\r\n            <div class=\"dropdown\">\r\n                <button class=\"dropbtn\">SELECT CATEGORY</button>\r\n                <div class=\"dropdown-content\">\r\n                    <button (click)=\"all()\" class=\"btn btn-lg bar\">ALL</button><br>\r\n                    <button (click)=\"riceNcurry()\" class=\"btn btn-lg bar\">RICE & CURRY</button><br>\r\n                    <button (click)=\"cakes()\" class=\"btn btn-lg bar\">CAKE</button><br>\r\n                    <button (click)=\"shortmeals()\" class=\"btn btn-lg bar\">SHORT MEALS</button><br>\r\n                    <button (click)=\"other()\" class=\"btn btn-lg bar\">OTHER</button><br>\r\n                </div>\r\n              </div>\r\n        </th>\r\n        <th scope=\"col-dm-8\">\r\n            <div class=\"dropdown\">\r\n          <button [routerLink]=\"['/addrecipe']\" class=\"dropbtn\">ADD NEW RECIPE</button>\r\n              </div>\r\n        </th>\r\n      </tr>\r\n    </thead>\r\n  </table>\r\n      \r\n  \r\n    \r\n\r\n      <div class=\"container\">\r\n          <div class=\"row\">\r\n              \r\n            <div class=\"col-xs-7 col-sm-6 col-lg-8\" >\r\n                <ul *ngFor=\"let recipies of recipe;let i = index\" [attr.data-index]=\"i\">\r\n                    <li *ngIf=\"catogary.mycatogory==recipies.catagory \">\r\n                      <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\"add\">\r\n                        <div id=\"container\"style=\"height:5%\">\r\n                            <div class=\"row\" style=\"height:5%\">\r\n                              <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2% \">\r\n                              <img src=\"{{ recipies.imageUrl }}\" id=\"pic\" class=\"img-rounded\" alt=\"\" style=\"width:100%;\">\r\n                              </div>\r\n                              <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;\">\r\n                              <h1  style=\"font-size:210%;\"> {{ recipies.recipename }}</h1><br>\r\n                              <h2 style=\"font-size:110%;\">{{ recipies.description  }}</h2>\r\n                              </div>\r\n                            </div>\r\n                         </div>\r\n                      </button>\r\n                    </li>\r\n                    <li *ngIf=\"catogary.mycatogory=='all'\">\r\n                     <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\" add\">\r\n                      <div id=\"container\"style=\"height:5%\">\r\n                          <div class=\"row\" style=\"height:5%\">\r\n                            <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2% \">\r\n                            <img src=\"{{ recipies.imageUrl }}\" id=\"pic\" class=\"img-rounded\" alt=\"\" style=\"width:100%;\">\r\n                            </div>\r\n                            <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;\">\r\n                            <h1  style=\"font-size:210%;\"> {{ recipies.recipename }}</h1><br>\r\n                            <h2 style=\"font-size:110%;\">{{ recipies.description  }}</h2>\r\n                            </div>\r\n                          </div>\r\n                       </div>\r\n                     </button>\r\n                   </li>\r\n                   </ul>\r\n                 </div>\r\n\r\n                 <div class=\"col-xs-5 col-sm-6 col-lg-4\"  >\r\n                    <div id=\"\">\r\n                        <div class=\"sidecontent\">\r\n                            <h2 class='headline'>Popular Recipes of this week</h2>\r\n                            <ul *ngFor=\"let recipies of weeklysidebarrecipe;let i = index\" [attr.data-index]=\"i\">\r\n                            <li >\r\n                                <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\"sideadd\">\r\n                                  <div id=\"container\"style=\"height:5%\">\r\n                                    <div class=\"row\" style=\"height:5%\">\r\n                                      <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2%;\">\r\n                                      <img src=\"{{ recipies.imageUrl }}\" id=\"sidepic\" class=\"img-rounded\" alt=\"\" style=\"height: 70px;width:80px;margin-top: -30%;margin-left:5%;\">\r\n                                      </div>\r\n                                      <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;margin-top: -5%;\">\r\n                                      <h1  style=\"font-size:120%;\"> {{ recipies.recipename }}</h1><br>\r\n                                      <h2 style=\"font-size:100%;margin-top:-10%;\">LIKES : {{ recipies.likes  }}</h2>\r\n                                      </div>\r\n                                    </div>\r\n                                 </div>\r\n                                </button>\r\n                              </li>\r\n                            </ul>\r\n                        </div>\r\n                </div>\r\n                  <hr>\r\n                <div id=\"\">\r\n                    <div class=\"sidecontent\">\r\n                        <h2 class='headline'>Most Popular Recipes</h2>\r\n                        <ul *ngFor=\"let recipies of sidebarrecipe;let i = index\" [attr.data-index]=\"i\">\r\n                        <li >\r\n                            <button [routerLink]=\"['/allrecipe',recipies.recipename]\" class=\"sideadd\">\r\n                              <div id=\"container\"style=\"height:5%\">\r\n                                <div class=\"row\" style=\"height:5%\">\r\n                                  <div class=\"col-dm-8 col-md-push-3\"  style=\"width:40%; padding-left:2%;\">\r\n                                  <img src=\"{{ recipies.imageUrl }}\" id=\"sidepic\" class=\"img-rounded\" alt=\"\" style=\"height: 70px;width:80px;margin-top: -30%;margin-left:5%;\">\r\n                                  </div>\r\n                                  <div class=\"col-dm-8 col-md-pull-8\" style=\"width:50%;height:10%;padding-left: 5%;margin-top: -5%;\">\r\n                                  <h1  style=\"font-size:120%;\"> {{ recipies.recipename }}</h1><br>\r\n                                  <h2 style=\"font-size:100%;margin-top:-10%;\">LIKES : {{ recipies.likes  }}</h2>\r\n                                  </div>\r\n                                </div>\r\n                             </div>\r\n                            </button>\r\n                          </li>\r\n                        </ul>\r\n                    </div>\r\n            </div>\r\n              </div>\r\n               \r\n                 \r\n            </div>\r\n           \r\n        </div>"
 
 /***/ }),
 
@@ -445,6 +445,19 @@ var AllrecipeComponent = /** @class */ (function () {
                 // console.log(res.recipe);
                 //this.recipe=res.recipe;
                 //console.log(this.recipe);
+            }
+            else {
+                _this.ngFlashMessageService.showFlashMessage({ messages: ["SERVER ERROR OCCUERED!"], dismissible: true, timeout: 4000, type: 'danger' });
+            }
+        });
+        this.authservice.weeklygetMostliked().subscribe(function (res) {
+            if (res.state) {
+                _this.weeklysidebarrecipe = res.recipe;
+                _this.weeklysidebarimgurl = res.pic_url;
+                //console.log("ds");
+                // console.log(res.recipe);
+                //this.recipe=res.recipe;
+                //console.log(this.sidebarrecipe);
             }
             else {
                 _this.ngFlashMessageService.showFlashMessage({ messages: ["SERVER ERROR OCCUERED!"], dismissible: true, timeout: 4000, type: 'danger' });
@@ -1559,8 +1572,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var AuthService = /** @class */ (function () {
+    //url="http://localhost:9000"
     function AuthService(http) {
         this.http = http;
+        this.url = "http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com";
     }
     AuthService.prototype.registerUser = function (user) {
         var formData = new FormData();
@@ -1569,13 +1584,13 @@ var AuthService = /** @class */ (function () {
         formData.append('lastname', user.lastname);
         formData.append('email', user.email);
         formData.append('phoneno', user.phoneno);
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/register", formData).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/register", formData).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.loginUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/login", user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/login", user, { headers: headers }).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.storeData = function (token, userdata) {
@@ -1593,7 +1608,7 @@ var AuthService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile", user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/profile", user, { headers: headers }).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.fetchtoken = function () {
@@ -1612,7 +1627,7 @@ var AuthService = /** @class */ (function () {
         this.authtoken = null;
         this.user = null;
         localStorage.clear();
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout", user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/logout", user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.loggedIn = function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])('tokenid');
@@ -1621,7 +1636,7 @@ var AuthService = /** @class */ (function () {
         var formData = new FormData();
         formData.append('profpic', user.fileToUpload, user.fileToUpload.name);
         formData.append('fullname', user.fullname);
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/c", formData).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/c", formData).map(function (res) { return res.json(); });
     };
     AuthService.prototype.addrecipe = function (newrecipe) {
         //this.fetchtoken();
@@ -1642,28 +1657,28 @@ var AuthService = /** @class */ (function () {
         formData.append('rate', newrecipe.rate);
         formData.append('catagory', newrecipe.catagory);
         formData.append('description', newrecipe.description);
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/addrecipe", formData).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/addrecipe", formData).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.getAllacceptedRecipe = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getallacceptedrecipe", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/getallacceptedrecipe", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getAllRecipe = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getallrecipe", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/getallrecipe", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getMostliked = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getmostliked", { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/getmostliked", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getviewRecipe = function (recipename) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getviewrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/getviewrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.likeRecipe = function (recipename) {
         var recipeData = {
@@ -1674,7 +1689,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/likerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/likerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.unlikeRecipe = function (recipename) {
         var recipeData = {
@@ -1685,7 +1700,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/unlikerecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.checklike = function (recipename) {
         var recipeData = {
@@ -1696,28 +1711,28 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/checklike", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/checklike", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getuserrecipes = function (myusername) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.fetchtoken();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/getuserrecipies", myusername, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/getuserrecipies", myusername, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.editUser = function (editData) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.fetchtoken();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/updateprofile", editData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/updateprofile", editData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.editimage = function (image) {
         var token = localStorage.getItem("tokenid");
         var formData = new FormData();
         formData.append('Authorization', token);
         formData.append('editprofpic', image.editimage, image.editimage.name);
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profpicchange", formData).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/profpicchange", formData).map(function (res) { return res.json(); });
     };
     ;
     AuthService.prototype.deleterecipe = function (recipename) {
@@ -1729,7 +1744,7 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/deleterecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/deleterecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.changepassword = function (password) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -1737,14 +1752,14 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/changepassword", password, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/changepassword", password, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.Isadmin = function () {
         this.fetchtoken();
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/isadmin", { sdsd: "sdd" }, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/isadmin", { sdsd: "sdd" }, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.acceptRecipe = function (recipeData) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -1752,12 +1767,12 @@ var AuthService = /** @class */ (function () {
         //console.log(this.authtoken);
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/acceptrecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/acceptrecipe", recipeData, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.searchrecipe = function (recipename) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/searchrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/foodrecipe/searchrecipe", recipename, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.deleteacc = function (pass) {
         var password = {
@@ -1767,12 +1782,17 @@ var AuthService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authtoken);
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/deleteuser", password, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/deleteuser", password, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.fogotpassword = function (username) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('content-Type', 'application/json');
-        return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/fogotpassword", username, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post(this.url + "/user/fogotpassword", username, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.weeklygetMostliked = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('content-Type', 'application/json');
+        return this.http.post(this.url + "/foodrecipe/getweeklymostliked", { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
