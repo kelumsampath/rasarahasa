@@ -9,7 +9,7 @@ const cors = require('cors');
 const cloudinary = require('cloudinary');
 
 const app = express();
-const port = process.env.PORT || 9000;
+const port = 8080;
 const user = require('./web/routes/user');
 const foodRecipe = require('./web/routes/foodRecipe');
 const config = require('./config/configuration');

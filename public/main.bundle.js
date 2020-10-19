@@ -1575,7 +1575,7 @@ var AuthService = /** @class */ (function () {
     //url="http://localhost:9000"
     function AuthService(http) {
         this.http = http;
-        this.url = "http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com";
+        this.url = "http://localhost:8080";
     }
     AuthService.prototype.registerUser = function (user) {
         var formData = new FormData();
